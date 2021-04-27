@@ -1,0 +1,169 @@
+#miGrilla{
+	display: grid;
+	grid-template-columns:55% 45%;
+	grid-template-rows:  10% 20% 50% 20%;
+	grid-template-areas: 
+	"header header"
+	"banner banner"
+	"priSeccion segSeccion"
+	"footer footer"
+	;
+	height:100vh;
+}
+@mixin header{
+	grid-area: header;
+	display: flex;
+	flex-direction: row;
+	background-color:yellow;
+	min-height: 80px;
+	justify-content:space-between;
+	align-items: center;
+	 nav{ 
+	 	ul{
+			display: flex;
+			flex-direction: row;
+			li{			
+				list-style: none;
+				margin: 15px;
+				color: #ccc;
+				a{			
+					text-decoration: none;
+				}
+			} 
+		}
+	}
+}	  
+.miHeader{
+	@include header;
+}
+.navFontColor{
+	color: black;
+	font-weight: bolder;
+}
+.centrado{
+	max-width: 1280px;
+	margin: auto;
+}
+@mixin banner{
+	grid-area: banner;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	min-height: 275px;
+	background-image: url('../multimedia/slappyfon.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 0 20px;
+}
+.miBanner{
+	@include banner;
+}
+ @mixin secIzq{
+	grid-area: "priSeccion";
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: left;
+	margin: 105px 175px;
+	background-color: lightgrey;
+	width:100%;
+	min-height: 50%;
+}
+.mainIzq{
+	@include secIzq;
+	height:45vh;
+	margin-bottom: 5em;	
+	img{
+		width: 135px;
+		height:125px;
+	}
+
+}
+
+.secDer{
+	grid-area: "segSeccion";
+	display:flex;
+	flex-direction: row;
+	align-items: right;
+	justify-content: right;
+	margin: 85px 33% 3em;
+}
+@mixin footer{
+		grid-area: footer;
+		background-color: grey;
+		width:100%;
+		height:20vh;
+		color:white;
+		text-decoration: none;
+		text-align: center;
+	}
+
+.miFooter{
+	@include footer;
+	margin-top: 5em;
+}
+
+.headerSobreNosotros{
+	@include header;
+}
+.bannerSobreNosotros{
+	@include banner;
+}
+
+.estiloHistoria{
+	@include secIzq;
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	background-color: white;
+	margin: 7em 430px;
+}
+h2,p{
+	text-align: center;
+	margin:auto;
+}
+iframe{
+	display:flex;
+	flex-direction: row;
+	justify-content:center;
+	align-items:center;
+}
+
+.foot-nosotros{
+	@include footer;
+	margin-top: 6em;
+}
+.foot-noticias{
+	@include footer;
+	margin-top: 8em;
+}
+
+/*Shop*/
+.bannerShop{
+	@include banner;
+}
+/*Noticias*/
+.bannerNoticias{
+	@include banner;
+}
+
+.shopMain{
+	@include secIzq;
+	justify-content: center;
+	background-color: white;
+	margin: 6em 400px;
+}
+.noticiasMain{
+	@include secIzq;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	background-color:white;
+	margin: 14rem 430px;
+	img{width: 145px;
+		height:135px;
+	}
+}
