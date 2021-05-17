@@ -5,12 +5,18 @@
 }	  
 .miHeader{
 	background-color:yellow;
+	a{
+		img{
+			width: 78px;
+			height: 68px;
+		}
+	}
 	div{
 		justify-content: right;
 	}		
 }
 .miToggler{
-	border-color: gray;
+	border-color: black;
 	margin: 20px 10px 20px 75% ;
 	display:flex;
 	justify-content: right;
@@ -30,34 +36,38 @@
 .miBanner{
 	@include banner;
 }
- @mixin secIzq{
-	width:100%;
-	min-height: 50%;
-}
-
 	.mainIzq{
-		height:49vh;
+		height:44vh;
 		width: 100%;
-		overflow: hidden;
-		img{
-			width: 135px;
-			height:125px;
-		}
+		ul{
+			li{
+				img{
+					width: 115px;
+					height:105px;
+				}
+			}
+		}		
 	}
 @media (min-width: 576px){
 	.mainIzq{
-		overflow: auto;
+		img{
+			width:75px;
+			height:65px;
+		}
 	}
-	img{
-		width:75px;
-		height:65px;
-	}
-}
+}	
 @media (max-width: 575.98px){
 	a{
 		img{
 			width: 75px;
 			height: 70px;
+		}
+	}
+}
+@media (min-width: 992px) {
+	footer{
+		div{
+		height: 40px;
 		}
 	}
 }
@@ -72,14 +82,28 @@
 		width:100%;
 		color:white;
 		text-align: center;
+
 	}
 @media (max-width: 575.98px){
 	footer{
 		div{
 		background-color: grey;
-		height: 18vh;
+		height: 17vh;
 		}
-	}	
+	}
+	.boxLogo{
+			div{
+			margin: 0px;
+			}	
+	}
+	.secDer{
+		margin-top:140px;
+	}
+	.miCard{
+		img{
+		margin-left: 152px;
+		}
+	}		
 }
 @media (min-width: 768px){
 	footer{
@@ -87,17 +111,27 @@
 		background-color: grey;
 		height: 12vh;
 		}
-	}		
+	}
+	.boxLogo{
+		height: 72px;
+	}
 }
-
+.miFooter{
+	@include footer;
+	margin: 0px;
+}
 .boxLogo{
+	height:78px;
 	img{
+		margin-top: 5px;
 		height: 65px;
 		width: 275px;
 	}
 }
 .boxRedes{
 	margin-top: 5px;
+	padding-right: 0px;
+	height: 78px;
 	img{
 		height: 55px;
 		width: 55px;
@@ -105,18 +139,9 @@
 }
 .boxUbicacion{ 
 	margin-top: 5px;
+	margin-bottom: 0px;
+	height: 78px;
 }
-.miFooter{
-	@include footer;
-	margin: 0px;
-}
-.headerSobreNosotros{
-	@include header;
-}
-.bannerSobreNosotros{
-	@include banner;
-}
-
 .estiloHistoria{
 	align-items: center;
 	justify-content: center;
@@ -126,14 +151,6 @@ h2,p{
 	margin-bottom: 25px;
 }
 /*Shop*/
-.bannerShop{
-	@include banner;
-}
-/*Noticias*/
-.bannerNoticias{
-	@include banner;
-}
-
 .shopMain{
 	justify-content: center;
 	background-color: white;
@@ -143,10 +160,10 @@ h2,p{
 	}
 }
 .noticiasMain{
-	justify-content:center;
-	background-color:white;
-	margin: 1.5rem 400px;
-	img{width: 145px;
-		height:135px;
+	justify-content: center;
+	background-color: white;
+	img{
+		width: 145px;
+		height: 135px;
 	}
 }
