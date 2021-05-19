@@ -13,21 +13,19 @@
 	}
 	div{
 		justify-content: right;
+		button{
+			border-color: black;
+    		background-color: grey!important;
+		}
 	}		
-}
-.miToggler{
-	border-color: black;
-	margin: 20px 10px 20px 75% ;
-	display:flex;
-	justify-content: right;
 }
 .navFontColor{
 	color: black;
 	font-weight: bolder;
 }
 @mixin banner{
-	min-height: 375px;
-	background-image: url('../multimedia/slappyfon.jpg');
+	min-height: 420px;
+	background-image: url('../multimedia/slappyBanner.JPG');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -36,25 +34,29 @@
 .miBanner{
 	@include banner;
 }
-	.mainIzq{
-		height:44vh;
-		width: 100%;
-		ul{
-			li{
-				img{
-					width: 115px;
-					height:105px;
-				}
-			}
-		}		
-	}
 @media (min-width: 576px){
-	.mainIzq{
-		img{
-			width:75px;
-			height:65px;
+	.miHeader{
+		div{
+			ul{
+				margin-right: 35px;
+			}
 		}
 	}
+	.mainIzq{
+		margin-top: 0px;
+		img{
+			width:205px;
+			height:215px;
+		}
+	}
+	.mainDer{
+		height: 23vh;
+	}
+	.miToggler{
+		margin: 20px 10px 20px 82% ;
+		display:flex;
+		justify-content: right;
+}
 }	
 @media (max-width: 575.98px){
 	a{
@@ -63,6 +65,12 @@
 			height: 70px;
 		}
 	}
+	.miBanner{
+		background-image: url('../multimedia/slappyfon.jpg');
+	}
+	.miToggler{
+		margin: 20px 10px 20px 82% ;
+	}	
 }
 @media (min-width: 992px) {
 	footer{
@@ -70,9 +78,30 @@
 		height: 40px;
 		}
 	}
+	footer{
+		div{
+		background-color: grey;
+		height: 29vh;
+		}
+	}
 }
-
-.secDer{
+@media (max-width: 991.98px) {
+	.noticiasMain{
+		div{
+			margin-bottom:0px;
+		}	
+	}
+	.miToggler{
+		margin: 20px 10px 20px 82% ;
+	}
+}
+.mainIzq{
+	width: 100%;
+	z-index: 2;
+	margin-bottom: 0px;	
+}
+.mainDer{
+	margin-top: 0px; 
 	display:inline-block;
 	flex-shrink:1;
 }
@@ -82,26 +111,26 @@
 		width:100%;
 		color:white;
 		text-align: center;
-
 	}
-@media (max-width: 575.98px){
+@media (max-width: 767.98px){
 	footer{
 		div{
 		background-color: grey;
-		height: 17vh;
+		height: 29vh;
 		}
 	}
 	.boxLogo{
 			div{
 			margin: 0px;
+			margin-bottom: 19px;
 			}	
-	}
-	.secDer{
-		margin-top:140px;
 	}
 	.miCard{
 		img{
-		margin-left: 152px;
+			height: 55px;
+			width: 45px;
+			margin-left: 62px;
+			margin-right: 52px;
 		}
 	}		
 }
@@ -115,10 +144,26 @@
 	.boxLogo{
 		height: 72px;
 	}
+	.mainIzq{
+		margin-left: 0em;
+	}
+	.miToggler{
+		margin: 20px 10px 20px 82% ;
+	}
+	img{
+		height: 15px;
+		width: 45px;
+	}
+	.miCard{
+		img{
+			margin-left: 50px;
+		}
+	}			
 }
 .miFooter{
 	@include footer;
 	margin: 0px;
+	z-index: 5;
 }
 .boxLogo{
 	height:78px;
@@ -162,6 +207,8 @@ h2,p{
 .noticiasMain{
 	justify-content: center;
 	background-color: white;
+	margin-top: 0px;
+	margin-bottom: 6vh;
 	img{
 		width: 145px;
 		height: 135px;
