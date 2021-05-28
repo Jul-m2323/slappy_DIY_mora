@@ -28,6 +28,7 @@
 
 .miHeader div {
   justify-content: right;
+  width: 175px;
 }
 
 .miHeader div button {
@@ -221,12 +222,6 @@ h2, p {
 .noticiasMain img {
   width: 145px;
   height: 135px;
-}
-
-/*Mi Titulo*/
-h1 {
-  justify-content: left;
-  margin-left: 20px;
 }
 
 /*seccion izquierda*/
