@@ -17,6 +17,11 @@
   padding: 0px;
 }
 
+/** Header general **/
+.navAnimacion:hover {
+  transform: scale(1.5, 1.2);
+}
+
 .miHeader {
   background-color: yellow;
 }
@@ -28,7 +33,6 @@
 
 .miHeader div {
   justify-content: right;
-  width: 175px;
 }
 
 .miHeader div button {
@@ -36,11 +40,7 @@
   background-color: grey !important;
 }
 
-.navFontColor {
-  color: black;
-  font-weight: bolder;
-}
-
+/** Banner general **/
 .miBanner {
   min-height: 420px;
   background-image: url("../multimedia/slappyBanner.JPG");
@@ -50,120 +50,17 @@
   padding: 0 20px;
 }
 
-@media (min-width: 576px) {
-  .miHeader div ul {
-    margin-right: 35px;
-  }
-  .mainIzq {
-    margin-top: 0px;
-  }
-  .mainIzq img {
-    width: 205px;
-    height: 215px;
-  }
-  .mainDer {
-    height: 23vh;
-  }
-  .miToggler {
-    margin: 20px 10px 20px 82%;
-    display: flex;
-    justify-content: right;
-  }
-}
-
-@media (max-width: 575.98px) {
-  a img {
-    width: 75px;
-    height: 70px;
-  }
-  .miBanner {
-    background-image: url("../multimedia/slappyfon.jpg");
-  }
-  .miToggler {
-    margin: 20px 10px 20px 82%;
-  }
-}
-
-@media (min-width: 992px) {
-  footer div {
-    height: 40px;
-  }
-  footer div {
-    background-color: grey;
-    height: 29vh;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .noticiasMain div {
-    margin-bottom: 0px;
-  }
-  .miToggler {
-    margin: 20px 10px 20px 82%;
-  }
-}
-
-.mainIzq {
-  width: 100%;
-  z-index: 2;
-  margin-bottom: 0px;
-}
-
-.mainDer {
-  margin-top: 0px;
-  display: inline-block;
-  flex-shrink: 1;
-}
-
-@media (max-width: 767.98px) {
-  footer div {
-    background-color: grey;
-    height: 29vh;
-  }
-  .boxLogo div {
-    margin: 0px;
-    margin-bottom: 19px;
-  }
-  .miCard img {
-    height: 55px;
-    width: 45px;
-    margin-left: 62px;
-    margin-right: 52px;
-  }
-}
-
-@media (min-width: 768px) {
-  footer div {
-    background-color: grey;
-    height: 12vh;
-  }
-  .boxLogo {
-    height: 72px;
-  }
-  .mainIzq {
-    margin-left: 0em;
-  }
-  .miToggler {
-    margin: 20px 10px 20px 82%;
-  }
-  img {
-    height: 15px;
-    width: 45px;
-  }
-  .miCard img {
-    margin-left: 50px;
-  }
-}
-
+/** Footer general **/
 .miFooter {
   background-color: grey;
   width: 100%;
   color: white;
   text-align: center;
-  margin: 0px;
-  z-index: 5;
+  position: absolute;
+  z-index: 2;
 }
 
+/** Interior de mi Footer **/
 .boxLogo {
   height: 78px;
 }
@@ -191,6 +88,20 @@
   height: 78px;
 }
 
+/** INDEX ESTILO **/
+.mainIzq {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.mainDer {
+  margin-top: 0px;
+  display: inline-block;
+  flex-shrink: 1;
+}
+
+/** NOSOTROS ESTILO **/
 .estiloHistoria {
   align-items: center;
   justify-content: center;
@@ -201,7 +112,7 @@ h2, p {
   margin-bottom: 25px;
 }
 
-/*Shop*/
+/** SHOP ESTILO **/
 .shopMain {
   justify-content: center;
   background-color: white;
@@ -210,8 +121,10 @@ h2, p {
 .shopMain img {
   width: 225px;
   height: 225px;
+  margin-left: 0px;
 }
 
+/** NOTICIAS ESTILO **/
 .noticiasMain {
   justify-content: center;
   background-color: white;
@@ -222,6 +135,113 @@ h2, p {
 .noticiasMain img {
   width: 145px;
   height: 135px;
+}
+
+/** Media Queries, Celulares para arriba**/
+@media (min-width: 576px) {
+  .miHeader div ul {
+    margin-right: 35px;
+  }
+  .mainIzq {
+    margin-top: 0px;
+  }
+  .mainIzq img {
+    width: 205px;
+    height: 215px;
+  }
+  .mainDer {
+    height: 23vh;
+  }
+  .miToggler {
+    margin: 20px 10px 20px 82%;
+    display: flex;
+    justify-content: right;
+  }
+}
+
+/** " ", Celulares para abajo **/
+@media (max-width: 575.98px) {
+  a img {
+    width: 75px;
+    height: 70px;
+  }
+  .miBanner {
+    background-image: url("../multimedia/slappyfon.jpg");
+  }
+  .miToggler {
+    margin: 20px 10px 20px 82%;
+  }
+  .miBoton div button {
+    display: flex;
+    justify-content: safe right;
+    margin-right: 5px;
+  }
+}
+
+/** " ", Desktops para arriba **/
+@media (min-width: 992px) {
+  footer div {
+    height: 40px;
+  }
+  footer div {
+    background-color: grey;
+    height: 29vh;
+  }
+}
+
+/** " ", Desktops para abajo **/
+@media (max-width: 991.98px) {
+  .noticiasMain div {
+    margin-bottom: 0px;
+  }
+  .miToggler {
+    margin: 20px 10px 20px 82%;
+  }
+  .miBanner {
+    background-image: url("../multimedia/slappyfon.jpg");
+  }
+}
+
+/** " ", Tablets para abajo **/
+@media (max-width: 767.98px) {
+  footer div {
+    background-color: grey;
+    height: 29vh;
+  }
+  .boxLogo div {
+    margin: 0px;
+    margin-bottom: 19px;
+  }
+  .miCard img {
+    height: 225px;
+    width: 205px;
+    margin-left: 62px;
+    margin-right: 52px;
+  }
+}
+
+/** " ", Tablets para arriba **/
+@media (min-width: 768px) {
+  footer div {
+    background-color: grey;
+    height: 12vh;
+  }
+  .boxLogo {
+    height: 72px;
+  }
+  .mainIzq {
+    margin-left: 0em;
+  }
+  .miToggler {
+    margin: 20px 10px 20px 82%;
+  }
+  img {
+    height: 15px;
+    width: 45px;
+  }
+  .miCard img {
+    margin-left: 58px;
+  }
 }
 
 /*seccion izquierda*/
@@ -240,4 +260,9 @@ section a p div h5, section a p div small, section a small div h5, section a sma
 
 .miFont {
   font-family: 'Mukta', sans-serif;
+}
+
+.navFontColor {
+  color: black;
+  font-weight: bolder;
 }
