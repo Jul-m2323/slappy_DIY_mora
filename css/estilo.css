@@ -95,6 +95,11 @@
   z-index: 1;
 }
 
+.noticiasCard {
+  margin-bottom: 0px;
+  height: 105px;
+}
+
 .mainDer {
   margin-top: 0px;
   display: inline-block;
@@ -122,6 +127,11 @@ h2, p {
   width: 225px;
   height: 225px;
   margin-left: 0px;
+}
+
+.miCard img {
+  margin: 0px;
+  padding: 0px;
 }
 
 /** NOTICIAS ESTILO **/
@@ -176,6 +186,10 @@ h2, p {
     justify-content: safe right;
     margin-right: 5px;
   }
+  .noticiasCard {
+    margin-bottom: 0px;
+    height: 105px;
+  }
 }
 
 /** " ", Desktops para arriba **/
@@ -186,6 +200,12 @@ h2, p {
   footer div {
     background-color: grey;
     height: 29vh;
+  }
+  .miCard {
+    width: 18rem;
+  }
+  .miCard img {
+    margin: 0px;
   }
 }
 
@@ -240,7 +260,7 @@ h2, p {
     width: 45px;
   }
   .miCard img {
-    margin-left: 58px;
+    margin-left: 50px;
   }
 }
 
