@@ -107,10 +107,25 @@ h2,p{
 		margin-left: 0px;
 	}
 }
-.miCard{
-	img{
-		margin: 0px;
-		padding: 0px;
+.bloque-1{
+	padding-bottom: 75px;
+	div{
+		justify-content: center;
+		align-items: center;
+	}
+	h2{
+		justify-content: center;
+	}
+}
+.bloque-2{
+	padding-bottom: 75px;
+	div{
+		width: 290px;
+		justify-content: center;
+		align-items: center;
+	}
+	h2{
+		justify-content: center;
 	}
 }
 /** NOTICIAS ESTILO **/
@@ -194,7 +209,7 @@ h2,p{
 		}
 	}
 	.miCard{
-		width: 18rem;
+		width: 15rem;
 		img{
 			margin: 0px;
 		}
@@ -262,7 +277,9 @@ h2,p{
 	}	
 	.miCard{
 		img{
-			margin-left: 50px;
+			margin: 10px 10px 10px 10px;
+			align-items: center;
+			justify-content: center;
 		}
 	}		
 }

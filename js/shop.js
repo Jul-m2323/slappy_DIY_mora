@@ -1,7 +1,3 @@
-let entradaUsuario = prompt('Ingrese su nombre');
-let recibe = "Hola! " + entradaUsuario + ' Bienvenido al Shop del Slappy DIY.';
-
-	alert(recibe);
 
 class Producto{
  constructor(tipo, nombre, material) {
@@ -17,12 +13,6 @@ class Producto{
 	}	
 }
 
-let tipo = prompt('Ingrese el tipo');
-let nombre = prompt('Ingrese el nombre:" ');
-let material = prompt('Ingrese el material');
-
-let productoX = new Producto(tipo, nombre, material);
-
 let productos = [
 	{id:1, tipo:'bolsa',nombre:'Bolso Playero Slappy DIY',material:'hilo'},
 	{id:2, tipo:'cera', nombre:'Vela/Wax Slappy DIY', material:'cera'},
@@ -34,17 +24,44 @@ let productos = [
 	{id:8, tipo:'skate', nombre:'Varillas de Skate Slappy', material:'plastico'},			 				
  ];
 
-const buscarProducto = productos.find(producto => producto.id === 3); 
-console.log(buscarProducto);
-
-let concatenado = "ID : "+ productos.id +"Tipo: "+ productos.tipo + "Producto: " + productos.nombre +"Material: "+productos.material;
-let plantilla   = `ID: ${productos.id} - Tipo ${productos.tipo} - Producto ${productos.nombre} - material ${productos.material}`;
-
-console.log(concatenado);
-console.log(plantilla);
-
 let articulos = document.getElementsByClassName("articulos");
 console.log(articulos[0].innerHTML);
 
+const buscarProducto = productos.find(producto => producto.id <= 7); 
+console.log(buscarProducto);
 
+ let boton1 = document.getElementById("btn1")
+ boton1.onclick = () => { console.log("Usted selecciono Bolso Playero Slappy DIY");}
 
+ let boton2 = document.getElementById("btn2")
+ boton2.onclick = () => { console.log("Usted selecciono Vela/Wax Slappy DIY");}
+
+ let boton3 = document.getElementById("btn3")
+ boton3.onclick = () => { console.log("Usted selecciono Campera Bomber Slappy DIY");}
+
+ let boton4 = document.getElementById("btn4")
+ boton4.onclick = () => { console.log("Usted selecciono Bolsas Slappy Logo");}
+
+ let boton5 = document.getElementById("btn5")
+ boton5.onclick = () => { console.log("Usted selecciono Remera Slappy DIY x Persistir");}
+
+ let boton6 = document.getElementById("btn6")
+ boton6.onclick = () => { console.log("Usted selecciono Bolsos Eje x Slappy DIY");}
+
+ let boton7 = document.getElementById("btn7")
+ boton7.onclick = () => { console.log("Usted selecciono Medias Slappy Logo");}
+
+ let boton8 = document.getElementById("btn8")
+ boton8.onclick = () => { console.log("Usted selecciono Varillas de Skate Slappy");}
+
+ let ok = true;
+const carrito = [];
+cargarProducto = false;
+do{
+	if(cargarProducto){
+			carrito.push(productos);
+			console.log("Producto adherido al Carro");
+	}
+}while(ok != false)
+
+console.log(carrito);
