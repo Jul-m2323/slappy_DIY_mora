@@ -78,21 +78,31 @@ const productos = [
         img:"multimedia/varas_skate.jpg" ,
         seleccionado: false
     },			 				
-    ]; 
+];
 
+const clientes = {
+    nombre:'',
+    apellido:'',
+    telefono:'',
+    direccion:'',
+    codPostal:''
+};
+
+//CARDS CREADAS PARA CADA PRODUCTO
 for (element of productos) {
     $("#primerSeccionProductos").append(
-        `<div class="card miCard col-12 col-sm-6 col-md-8 col-lg-4" >
+        `<div class="card  miCard col-12 col-sm-6 col-md-8 col-lg-4" >
 		  <img src="${element.img}" class="card-img-top" alt="...">
 		  <div class="card-body">
 		    <p class="card-text articulos">${element.nombre}</p>
 			<p>${element.precio} $</p>
-			<button type="button" id="${element.id}" class="sumarAlCarro btn btn-outline-warning">Agregar al carrito</button>
+			<button type="button" id="${element.id}" class="buttonJs sumarAlCarro btn btn-outline-warning">Agregar al carrito</button>
 		  </div>
 		</div>`
     );
 }
 
+//ASIGNACION DE EVENTO SUMAR AL CARRO
 $('.sumarAlCarro').click( function (event){
     const buttonclick = event.target;
     console.log(buttonclick.id);
@@ -108,7 +118,7 @@ $('.sumarAlCarro').click( function (event){
 
 })
 
-
+//CARRITO MAS FUNCIONES (MOSTRAR PRODUCTOS SELECCIONADOS, RELLENAR FORM, REALIZAR COMPRA)
 $("#carrito").click(function () {
     console.log("click");
 
@@ -118,14 +128,13 @@ $("#carrito").click(function () {
         hijo.remove()
     }
 
-const nombre = $(".nombre");
-const apellido = $(".apellido");
-const telefono = parseInt($(".telefono"));
-const direccion = $(".direccion");
-const codPostal = parseInt($(".codPostal"));
-
+const nombre = '';
+const apellido ='';
+const telefono = '';
+const direccion = '';
+const codPostal = '';
 $(`#Carrito`).append(
-    `<div>
+   `<div class="col-xl-4 noRepeat">
     <h2>Productos Seleccionados</h2>
     <table class="table table-striped table-dark">
         <thead>
@@ -136,44 +145,40 @@ $(`#Carrito`).append(
                 <th scope="col">$</th>
             </tr> 
         </thead>
-        <tbody id="productoSeleccionado" >
-            
+        <tbody id="productoSeleccionado">
         </tbody>
     </table>
+    <div id="carritoTotal"></div>
     </div>
-    <div class="noRepeat">
-        <form>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Nombre</label>
-          <input id="nombre" type="text" class="form-control" id="formGroupExampleInput">
-        </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput2">Apellido</label>
-          <input id="apellido" type="text" class="form-control" id="formGroupExampleInput2">
-        </div>
-        <div class="form-group">
+    <div class="col-xl-6 noRepeat">
+        <form id="cliente">
+            <label for="formGroupExampleInput">Nombre</label>
+            <input type="text" id="nombre" class="col-xl-12 form-control">
+
+            <label for="formGroupExampleInput2">Apellido</label>
+            <input type="text" id="apellido" class="col-12 form-control">
+        
             <label for="formGroupExampleInput2">Telefono</label>
-            <input id="telefono" type="text" class="form-control" id="formGroupExampleInput2">
-        </div>
-        <div class="form-group">
+            <input type="number" id="telefono" class="col-12 form-control">
+         
             <label for="formGroupExampleInput2">Direccion (incluir entrecalles)</label>
-            <input id="direccion" type="text" class="form-control" id="formGroupExampleInput2">
-        </div>
-        <div class="form-group">
+            <input type="text" id="direccion" class="col-12 form-control">
+            
             <label for="formGroupExampleInput2">Codigo Postal</label>
-            <input id="codPostal" type="text" class="form-control" id="formGroupExampleInput2">
-        </div>
-        <button type="button" class="btn8 btn btn-outline-warning">Comprar</button>
+            <input type="text" id="codPostal" class="col-12 form-control">
+            
+            <button id="realizarCompra" type="button" class="btn8 btn btn-outline-warning">Comprar</button>
+            <button id="vaciarCarrito" type="button" class="btn8 btn btn-outline-warning">Vaciar Carro</button>
         </form>
     </div>`  
-    );
+);
 const productosCarrito = productos.filter((productoItem) => productoItem.seleccionado);
 console.log(productosCarrito);
 sessionStorage.setItem('productosCarrito', JSON.stringify(productosCarrito));
 let totalProductos = 0;
 
     for (const producto of productosCarrito) {
-        totalProductos += parseFloat(productos.precio);
+        totalProductos += parseInt(producto.precio);
         $('#productoSeleccionado').append(` 
         <tr>
 			<th>${producto.id}</th>
@@ -181,6 +186,55 @@ let totalProductos = 0;
 			<td>${producto.material}</td>
 			<td>$${producto.precio}</td>
 		</tr>
-        `)};
+    `)}
+
+const total = totalProductos;
+const envio = total + 250
+$('#carritoTotal').append(`
+<h3>Total: $${total}</h3>
+<h4>+ Envio: $${envio}</h4>
+`)
+
+$('#vaciarCarrito').click(function (){
+    $('#productoSeleccionado').empty()
+    $('#carritoTotal').empty()
+
+})
+ 
+$('#realizarCompra').click(function() {
+
+if ($("#nombre").val().trim() === ""){
+    alert('no ha ingresado su nombre');
+    return;
+}  else {
+    sessionStorage.setItem('nombre',JSON.stringify(nombre));
+}  
+if ( $("#apellido").val().trim() === ""){
+    alert('no ha ingresado su apellido');
+    return;
+}  else {
+    sessionStorage.setItem('nombre',JSON.stringify(apellido));
+}  
+if ($("#telefono").val().trim() === ""){
+    alert('no ha ingresado su telefono');
+    return;
+}  else {
+    sessionStorage.setItem('nombre',JSON.stringify(telefono));
+}  
+if ($("#direccion").val().trim() === ""){
+    alert('no ha ingresado su direccion');
+    return;
+}  else {
+    sessionStorage.setItem('nombre',JSON.stringify(direccion));
+}      
+if ($("#codPostal").val().trim() === ""){
+    alert('no ha ingresado su codigo postal');
+    return;
+}  else {
+    sessionStorage.setItem('nombre',JSON.stringify(codPostal));
+}  
+alert(`muchas gracias por su compra!`);
+})
 });
+
 

@@ -156,6 +156,22 @@ h2, p {
   justify-content: center;
 }
 
+.buttonJs {
+  display: flex;
+  align-items: center;
+  margin: 25px;
+  margin-bottom: 5px;
+}
+
+.miCarrito {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonCarrito {
+  box-sizing: 25px;
+}
+
 /** NOTICIAS ESTILO **/
 .noticiasMain {
   justify-content: center;
